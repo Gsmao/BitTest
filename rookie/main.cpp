@@ -1,9 +1,11 @@
-#include<iostream>
+#include"main.h"
+#include"seqList.h"
+
 
 using namespace std;
 
 int main() {
-	cout << "c++ project" <<endl;
+	//damoMain();
 
 
 	return 0;

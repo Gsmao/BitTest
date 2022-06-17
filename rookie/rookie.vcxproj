@@ -140,9 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
+    <ClInclude Include="seqList.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="damo.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Solution.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
