@@ -13,13 +13,16 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\abstraction">
+      <UniqueIdentifier>{50e70da5-ba8a-449a-b5fe-1eb39feb81c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\abstraction">
+      <UniqueIdentifier>{da3bf103-1ee3-4962-963c-75a7aa2835d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="seqList.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\abstraction</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -29,8 +32,8 @@
     <ClCompile Include="damo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Solution.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="seqList.cpp">
+      <Filter>源文件\abstraction</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

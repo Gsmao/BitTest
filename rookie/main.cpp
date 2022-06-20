@@ -1,12 +1,12 @@
-#include"main.h"
-#include"seqList.h"
-
+#include<iostream>
 
 using namespace std;
 
+
+void damoMain();
+void seqMain();
+
 int main() {
-	//damoMain();
-
-
+	seqMain();
 	return 0;
 }

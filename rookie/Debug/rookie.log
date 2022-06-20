@@ -1,7 +1,2 @@
-﻿  Solution.cpp
-D:\Work\Code\BitTest\rookie\Solution.cpp(12,23): warning C4018: “<”: 有符号/无符号不匹配
-D:\Work\Code\BitTest\rookie\Solution.cpp(15,23): warning C4018: “<=”: 有符号/无符号不匹配
-  damo.cpp
-  main.cpp
-  正在生成代码...
+﻿  seqList.cpp
   rookie.vcxproj -> D:\Work\Code\BitTest\rookie\Debug\rookie.exe
