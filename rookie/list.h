@@ -4,6 +4,7 @@
 #include<malloc.h>
 #include<assert.h>
 #include<stdbool.h>
+#include<stdlib.h>
 
 typedef int dataType;
 
@@ -28,8 +29,11 @@ void listPopFront(listNode** pphead);
 // 查某个数值
 listNode* listPosFind(listNode* phead, dataType x);
 // 在pos位置插入  1->2->3
-void listInsert(listNode** pphead, listNode* pos, dataType x);
+void listInsertBefore(listNode** pphead, listNode* pos, dataType x);
+void listInsertAfter(listNode** pphead, listNode* pos, dataType x);
+
 void listErase(listNode** pphead, listNode* pos);
+void listEraseAfter(listNode* pos);
 
 int listSize(listNode* phead);
 bool listEmpty(listNode* phead);

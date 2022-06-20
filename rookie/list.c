@@ -64,7 +64,6 @@ void listPopBack(listNode** pphead) {
 	}
 	else {
 		listNode* prev = NULL;
-
 		while (cur->next != NULL) {
 			prev = cur;
 			cur = cur->next;
@@ -108,29 +107,52 @@ listNode* listPosFind(listNode* phead, dataType x) {
 	return NULL;
 }
 
-// 插入
-void listInsert(listNode** pphead, listNode* pos, dataType x) {
-	listNode* cur = *pphead;
-	listNode* prev = NULL;
+void listInsertBefore(listNode** pphead, listNode* pos, dataType x) {
+	assert(pphead != NULL);
+	assert(pos != NULL);
 
-	if (cur == pos) {
-		return listPushFront(pphead, x);
+	if (pos == *pphead) {
+		listPushFront(pphead, x);
 	}
 	else {
 		// 往中间插入
-		while (cur != pos) {
-			prev = cur;
-			cur = cur->next;
+		listNode* prev = *pphead;
+		while (prev->next != pos) {
+			prev = prev->next;
 		};
-
 		listNode* node = createNode(x);
 		prev->next = node;
 		node->next = pos;
 	}
 }
 
-void listErase(listNode** pphead, listNode* pos);
+void listInsertAfter(listNode** pphead, listNode* pos, dataType x) {
+	listNode* node = createNode(x);
+	node->next = pos->next;
+	pos->next = node;
+}
 
+void listErase(listNode** pphead, listNode* pos) {
+	assert(pphead != NULL);
+	
+	if (*pphead == pos) {
+		return listPopFront(pphead);
+	}
+	listNode* prev = *pphead;
+	while (prev->next != pos) {
+		prev = prev->next;
+	}
+	prev->next = pos->next;
+	free(pos);
+}
+
+void listEraseAfter(listNode* pos) {
+	if (pos->next != NULL) {
+		listNode* next = pos->next->next;
+		free(pos->next);
+		pos->next = next;
+	}
+}
 
 int listSize(listNode* phead) {
 	listNode* cur = phead;
@@ -148,7 +170,7 @@ bool listEmpty(listNode* phead) {
 
 // 链表相关练习题
 
-// 移除链表元素 https://leetcode.cn/problems/remove-linked-list-elements/
+// 移除链表元素-203 https://leetcode.cn/problems/remove-linked-list-elements/
 listNode* removeElements(listNode* head, int val) {
 	listNode* cur = head;
 	listNode* prev = NULL;
@@ -179,6 +201,27 @@ listNode* removeElements(listNode* head, int val) {
 	return head;
 }
 
+// 反转链表-206 https://leetcode.cn/problems/reverse-linked-list/
+struct ListNode* reverseList(struct ListNode* head) {
+	// 1 - 2 - 3
+	// 这个题的核心思想就是 前中后三个指针要玩明白
+	// 1：先保存cur当前指针的next下一个地址（因为马上要改）
+	// 2：然后改成 prev 指向的地址
+	// 3：prev 就可以改成 cur（下一个地址的prev）
+	// 4：cur 改成 next，向后移动
+	// 要保证顺序不能乱
+	struct ListNode* prev = NULL;
+	struct ListNode* cur = head;
+	struct ListNode* next = head;
+	while (cur != NULL) {
+		next = cur->next;
+		cur->next = prev;
+		prev = cur;
+		cur = next;
+	}
+	return prev;
+}
+
 
 int main() {
 	listNode* phead = NULL;
@@ -187,6 +230,7 @@ int main() {
 	listPushFront(&phead, 2);
 	listPushFront(&phead, 3);
 	listPrintln(phead);
+
 
 	/*listPushBack(&phead, 1);
 	listPushBack(&phead, 2);
@@ -206,8 +250,18 @@ int main() {
 	listPrintln(phead);
 
 	listNode* node1 = listPosFind(phead, 100);
-	listInsert(&phead, node1, 99);
+	listInsertBefore(&phead, node1, 99);
 	listPrintln(phead);
+
+	listInsertAfter(&phead, node1, 101);
+	listPrintln(phead);
+
+	//listErase(&phead, node1);
+	//listPrintln(phead);
+
+
+	//listEraseAfter(&phead, node1);
+	//listPrintln(phead);
 
 	return 0;
 }
