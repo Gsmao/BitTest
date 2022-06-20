@@ -1,12 +1,13 @@
 #include<iostream>
-
 using namespace std;
 
 
 void damoMain();
 void seqMain();
+void listMain();
 
-int main() {
-	seqMain();
-	return 0;
-}
+//int main() {
+//	//listMain();
+//
+//	return 0;
+//}

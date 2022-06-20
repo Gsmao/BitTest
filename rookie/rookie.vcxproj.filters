@@ -24,6 +24,9 @@
     <ClInclude Include="seqList.h">
       <Filter>头文件\abstraction</Filter>
     </ClInclude>
+    <ClInclude Include="list.h">
+      <Filter>头文件\abstraction</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,7 +35,10 @@
     <ClCompile Include="damo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="seqList.cpp">
+    <ClCompile Include="seqList.c">
+      <Filter>源文件\abstraction</Filter>
+    </ClCompile>
+    <ClCompile Include="list.c">
       <Filter>源文件\abstraction</Filter>
     </ClCompile>
   </ItemGroup>

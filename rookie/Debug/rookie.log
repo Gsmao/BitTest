@@ -1,2 +1,5 @@
-﻿  seqList.cpp
+﻿  list.c
+D:\Work\Code\BitTest\rookie\list.c(20,7): warning C4013: “exit”未定义；假设外部返回 int
+D:\Work\Code\BitTest\rookie\list.c(117,34): warning C4098: “listInsert”:“void”函数返回值
+D:\Work\Code\BitTest\rookie\list.c(27): warning C4715: “createNode”: 不是所有的控件路径都返回值
   rookie.vcxproj -> D:\Work\Code\BitTest\rookie\Debug\rookie.exe
