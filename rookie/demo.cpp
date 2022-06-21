@@ -171,9 +171,14 @@ void swap(int* a, int* b) {
 	*a = tmp;
 }
 
-void damoMain() {
+
+
+
+//int main() {
+int cppmain() {
 	cout << "this is damo main fuc" << endl;
 	// cur
 	// 1  1  2  2  3  3  3
-	// pos 
+	// pos
+	return 0;
 }

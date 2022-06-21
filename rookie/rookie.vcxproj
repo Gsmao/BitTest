@@ -143,9 +143,9 @@
     <ClInclude Include="seqList.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="damo.cpp" />
+    <ClCompile Include="demo.cpp" />
     <ClCompile Include="list.c" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="main.c" />
     <ClCompile Include="seqList.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

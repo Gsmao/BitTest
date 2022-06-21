@@ -136,14 +136,17 @@ void listErase(listNode** pphead, listNode* pos) {
 	assert(pphead != NULL);
 	
 	if (*pphead == pos) {
-		return listPopFront(pphead);
+		listPopFront(pphead);
+		
 	}
-	listNode* prev = *pphead;
-	while (prev->next != pos) {
-		prev = prev->next;
+	else {
+		listNode* prev = *pphead;
+		while (prev->next != pos) {
+			prev = prev->next;
+		}
+		prev->next = pos->next;
+		free(pos);
 	}
-	prev->next = pos->next;
-	free(pos);
 }
 
 void listEraseAfter(listNode* pos) {
@@ -223,13 +226,14 @@ struct ListNode* reverseList(struct ListNode* head) {
 }
 
 
-int main() {
-	listNode* phead = NULL;
+void listMain() {
+	printf("this is list func");
+	//listNode* phead = NULL;
 
-	listPushFront(&phead, 1);
-	listPushFront(&phead, 2);
-	listPushFront(&phead, 3);
-	listPrintln(phead);
+	//listPushFront(&phead, 1);
+	//listPushFront(&phead, 2);
+	//listPushFront(&phead, 3);
+	//listPrintln(phead);
 
 
 	/*listPushBack(&phead, 1);
@@ -245,16 +249,16 @@ int main() {
 	//listPopBack(&phead);
 	//listPrintln(phead);
 
-	listNode* node = listPosFind(phead, 2);
-	node->val = 100;
-	listPrintln(phead);
+	//listNode* node = listPosFind(phead, 2);
+	//node->val = 100;
+	//listPrintln(phead);
 
-	listNode* node1 = listPosFind(phead, 100);
-	listInsertBefore(&phead, node1, 99);
-	listPrintln(phead);
+	//listNode* node1 = listPosFind(phead, 100);
+	//listInsertBefore(&phead, node1, 99);
+	//listPrintln(phead);
 
-	listInsertAfter(&phead, node1, 101);
-	listPrintln(phead);
+	//listInsertAfter(&phead, node1, 101);
+	//listPrintln(phead);
 
 	//listErase(&phead, node1);
 	//listPrintln(phead);
@@ -263,5 +267,4 @@ int main() {
 	//listEraseAfter(&phead, node1);
 	//listPrintln(phead);
 
-	return 0;
 }

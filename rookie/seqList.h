@@ -3,6 +3,7 @@
 #include<stdio.h>
 #include<assert.h>
 #include<malloc.h>
+#include<stdlib.h>
 
 typedef int seqListType;
 

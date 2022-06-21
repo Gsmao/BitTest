@@ -14,6 +14,8 @@ typedef struct ListNode {
 } listNode;
 
 
+void listMain();
+
 // 打印链表
 void listPrintln(listNode* phead);
 // 创建新节点
@@ -37,3 +39,4 @@ void listEraseAfter(listNode* pos);
 
 int listSize(listNode* phead);
 bool listEmpty(listNode* phead);
+
